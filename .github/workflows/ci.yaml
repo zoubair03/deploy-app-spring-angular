@@ -31,3 +31,9 @@ jobs:
     context: ./angular-app
     push: true
     tags: ${{secrets.DOCKERHUB_USERNAME }}/spring-app:latest
+  #test application 
+  -name: Start Application with Docker Compose
+   run: docker-compose up -d
+
+  -name: Verify containers starts correctly
+   run: docker ps
